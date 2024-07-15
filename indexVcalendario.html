@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Dating Event</title>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js'></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0779e4 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+        nav ul {
+            float: right;
+            margin-top: 10px;
+        }
+        nav ul li {
+            display: inline;
+            margin-left: 5px;
+        }
+        .main {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        #calendar {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Speed Dating Valladolid</h1>			<h3>MARIBARBOLA</h3>
+            <nav>
+                <ul>
+					<li><a href="#">INICIO</a></li>
+					<li><a href="#">COMO FUNCIONA</a></li>
+					<li><a href="#">EVENTOS</a></li>
+					<li><a href="#">ZONA USUARIOS</a></li>
+					<li><a href="#">FORMAS DE PAGO</a></li>
+					<li><a href="#">CONTACTO</a></li>
+					<li><a href="#">CENAS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container main">
+        <h2>Welcome to Our Speed Dating Event</h2>
+        <p>Join us for a fun and exciting evening of speed dating!</p>
+        <div id='calendar'></div>
+    </div>
+    <footer>
+        <p>Speed Dating Event &copy; 2024</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                events: [
+                   /* {
+                        title: 'Speed Dating Night',
+                        start: '2024-07-20T19:00:00',
+                        end: '2024-07-20T21:00:00',
+                        description: 'Join us for a fun evening!'
+                    },*/
+                    {
+                        title: 'Speed Dating Afternoon',
+                        start: '2024-07-27T18:00:00',
+                        end: '2024-07-27T20:00:00',
+                        description: 'An afternoon of great connections!'
+                    }
+                ],
+                eventClick: function(info) {
+                    alert('Event: ' + info.event.title + '\n' + 'Description: ' + info.event.extendedProps.description);
+                }
+            });
+            calendar.render();
+        });
+    </script>
+</body>
+</html>
